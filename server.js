@@ -20,8 +20,10 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 
-// Point static path to dist
-app.use(express.static(path.join(__dirname, 'dist')));
+
+// https://github.com/angular/angular-cli/issues/8342#issuecomment-414104501
+// Point static path to dist/project-name
+app.use(express.static(path.join(__dirname, 'dist/fantasy-rpg-simulator')));
 
 // Set the api routes
 app.use('/api', api);
